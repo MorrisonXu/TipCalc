@@ -44,6 +44,9 @@
     _tfInput.textAlignment = NSTextAlignmentRight;
     _tfInput.placeholder = @"0";
     
+    _tfInput.rightViewMode=UITextFieldViewModeAlways;
+    _tfInput.rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MARGIN_RIGHT, self.frame.size.height)];
+    
     [self addSubview:_tfInput];
 }
 

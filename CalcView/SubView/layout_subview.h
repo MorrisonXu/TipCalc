@@ -18,6 +18,7 @@
 #define INPUT_LEFT_WIDTH        130
 #define KEY_BACK_COLOR          RGBCOLOR(0, 188, 212)
 #define SEP_HEIGHT              1
+#define MARGIN_RIGHT            20
 
 // Result Board
 #define RESULT_BACK_COLOR       MAIN_COLOR

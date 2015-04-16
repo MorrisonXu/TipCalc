@@ -36,7 +36,7 @@
 }
 
 - (void)createResult {
-    _lbReslt = [[UILabel alloc] initWithFrame:CGRectMake(INPUT_LEFT_WIDTH, 0, self.frame.size.width - INPUT_LEFT_WIDTH, self.frame.size.height)];
+    _lbReslt = [[UILabel alloc] initWithFrame:CGRectMake(INPUT_LEFT_WIDTH, 0, self.frame.size.width - INPUT_LEFT_WIDTH - MARGIN_RIGHT, self.frame.size.height)];
     _lbReslt.textAlignment = NSTextAlignmentRight;
     _lbReslt.textColor = [UIColor whiteColor];
     _lbReslt.text = @"0";

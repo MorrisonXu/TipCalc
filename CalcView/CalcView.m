@@ -27,11 +27,16 @@
     _ibBill = [self createIb:_ibBill withFrame:CGRectMake(0, BILL_Y, self.frame.size.width, BILL_HEIGHT)];
     _ibPercent = [self createIb:_ibPercent withFrame:CGRectMake(0, PERCENT_Y, self.frame.size.width, PERCENT_HEIGHT)];
     _ibSplit = [self createIb:_ibSplit withFrame:CGRectMake(0, SPLIT_Y, self.frame.size.width, SPLIT_HEIGHT)];
+    [_ibBill setKey:@"BILL ￥"];
+    [_ibPercent setKey:@"TIP %"];
+    [_ibSplit setKey:@"SPLIT"];
     
     [self createOK];
     
     _rbTotal = [self createRb:_rbTotal withFrame:CGRectMake(0, TOTAL_Y, self.frame.size.width, TOTAL_HEIGHT)];
     _rbTip = [self createRb:_rbTip withFrame:CGRectMake(0, TIP_Y, self.frame.size.width, TIP_HEIGHT)];
+    [_rbTotal setKey:@"TOTAL"];
+    [_rbTip setKey:@"TIP"];
 }
 
 - (void)createTopBar {
