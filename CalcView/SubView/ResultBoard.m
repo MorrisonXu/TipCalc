@@ -32,6 +32,8 @@
     _lbKey.textColor = [UIColor whiteColor];
     _lbKey.text = @"Default";
     
+    _lbKey.font = KEY_FONT(FONT_PX2PT(KEY_FONT_SIZE));
+    
     [self addSubview:_lbKey];
 }
 
@@ -40,6 +42,8 @@
     _lbReslt.textAlignment = NSTextAlignmentRight;
     _lbReslt.textColor = [UIColor whiteColor];
     _lbReslt.text = @"0";
+    
+    _lbReslt.font = KEY_FONT(FONT_PX2PT(KEY_FONT_SIZE));
     
     [self addSubview:_lbReslt];
 }

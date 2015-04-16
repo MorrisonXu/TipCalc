@@ -34,18 +34,23 @@
     _lbKey.textColor = [UIColor whiteColor];
     _lbKey.text = @"Default";
     
+    _lbKey.font = KEY_FONT(FONT_PX2PT(KEY_FONT_SIZE));
+    
     [self addSubview:_lbKey];
 }
 
 - (void)createInput {
     _tfInput = [[UITextField alloc] initWithFrame:CGRectMake(INPUT_LEFT_WIDTH, 0, self.frame.size.width - INPUT_LEFT_WIDTH, self.frame.size.height)];
     _tfInput.keyboardType = UIKeyboardTypeDecimalPad;
+    _tfInput.keyboardAppearance = UIKeyboardAppearanceDark;
     [_tfInput setBackgroundColor:[UIColor whiteColor]];
     _tfInput.textAlignment = NSTextAlignmentRight;
     _tfInput.placeholder = @"0";
     
     _tfInput.rightViewMode=UITextFieldViewModeAlways;
     _tfInput.rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MARGIN_RIGHT, self.frame.size.height)];
+    
+    _tfInput.font = KEY_FONT(FONT_PX2PT(KEY_FONT_SIZE));
     
     [self addSubview:_tfInput];
 }

@@ -33,6 +33,7 @@
     _lbTitle = [[UILabel alloc] initWithFrame:frameTitle];
     _lbTitle.textColor = [UIColor whiteColor];
     _lbTitle.textAlignment = NSTextAlignmentCenter;
+    _lbTitle.font = TOP_BAR_FONT(FONT_PX2PT(TOP_BAR_FONT_SIZE));
     
     _lbTitle.text = @"TIP CALC by Kiki";
     

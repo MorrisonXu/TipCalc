@@ -13,12 +13,16 @@
 
 // Top Bar
 #define TOP_BAR_BACK_COLOR      MAIN_COLOR
+#define TOP_BAR_FONT(fontSize)  [UIFont fontWithName:@"Zapfino" size:fontSize]
+#define TOP_BAR_FONT_SIZE       30
 
 // Input Board
 #define INPUT_LEFT_WIDTH        130
 #define KEY_BACK_COLOR          RGBCOLOR(0, 188, 212)
 #define SEP_HEIGHT              1
 #define MARGIN_RIGHT            20
+#define KEY_FONT(fontSize)      [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:fontSize]
+#define KEY_FONT_SIZE           50
 
 // Result Board
 #define RESULT_BACK_COLOR       MAIN_COLOR

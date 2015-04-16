@@ -26,7 +26,9 @@
     
     _ibBill = [self createIb:_ibBill withFrame:CGRectMake(0, BILL_Y, self.frame.size.width, BILL_HEIGHT)];
     _ibPercent = [self createIb:_ibPercent withFrame:CGRectMake(0, PERCENT_Y, self.frame.size.width, PERCENT_HEIGHT)];
+    _ibPercent.tfInput.keyboardType = UIKeyboardTypeNumberPad;
     _ibSplit = [self createIb:_ibSplit withFrame:CGRectMake(0, SPLIT_Y, self.frame.size.width, SPLIT_HEIGHT)];
+    _ibSplit.tfInput.keyboardType = UIKeyboardTypeNumberPad;
     [_ibBill setKey:@"BILL ￥"];
     [_ibPercent setKey:@"TIP %"];
     [_ibSplit setKey:@"SPLIT"];
@@ -55,6 +57,8 @@
     [_btOK setBackgroundColor:OK_BACK_COLOR];
     [_btOK setTintColor:[UIColor whiteColor]];
     [_btOK setTitle:@"OK" forState:UIControlStateNormal];
+    
+    _btOK.titleLabel.font = OK_FONT(FONT_PX2PT(OK_FONT_SIZE));
     
     [self addSubview:_btOK];
 }
