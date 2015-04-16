@@ -12,7 +12,8 @@
 
 @property (nonatomic, strong)UILabel *lbKey;
 @property (nonatomic, strong)UITextField *tfInput;
+@property (nonatomic, strong)UIView *vSep;
 
-
+- (void)setKey:(NSString *)key;
 
 @end

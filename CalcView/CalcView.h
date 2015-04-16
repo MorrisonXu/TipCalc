@@ -8,15 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+#import "TopBar.h"
+#import "InputBoard.h"
+#import "ResultBoard.h"
+
 @interface CalcView : UIControl
 
+@property (nonatomic, strong)TopBar *topBar;
 
+@property (nonatomic, strong)InputBoard *ibBill;
+@property (nonatomic, strong)InputBoard *ibPercent;
+@property (nonatomic, strong)InputBoard *ibSplit;
 
-// Input
-@property (nonatomic, strong)UITextField *tfBill;
-@property (nonatomic, strong)UITextField *tfTipPercent;
-@property (nonatomic, strong)UITextField *tfSplitNum;
-// Output
-@property (nonatomic, strong)UILabel *lbTip;
+@property (nonatomic, strong)UIButton *btOK;
+
+@property (nonatomic, strong)ResultBoard *rbTotal;
+@property (nonatomic, strong)ResultBoard *rbTip;
 
 @end

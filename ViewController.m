@@ -19,6 +19,8 @@
     
     [self createView];
     [self initEvents];
+    
+    [_vCalc.ibBill.tfInput becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,40 +35,40 @@
 }
 
 - (void)initEvents {
-    _vCalc.tfBill.delegate = self;
-    _vCalc.tfTipPercent.delegate = self;
-    _vCalc.tfSplitNum.delegate = self;
+    _vCalc.ibBill.tfInput.delegate = self;
+    _vCalc.ibPercent.tfInput.delegate = self;
+    _vCalc.ibSplit.tfInput.delegate = self;
     
-    [_vCalc addTarget:self action:@selector(hideKeyboard) forControlEvents:UIControlEventTouchUpInside];
+    [_vCalc.btOK addTarget:self action:@selector(doCalc) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if ([self isAllInput]) {
-        _vCalc.lbTip.text = [NSString stringWithFormat:@"%.2f", [self calcTip]];
-    }
+}
+
+#pragma mark - 响应函数
+
+- (void)doCalc {
+    [self hideKeyboard];
 }
 
 #pragma mark - 功能函数
 
-- (BOOL)isAllInput {
-    return [_vCalc.tfBill.text length] && [_vCalc.tfTipPercent.text length] && [_vCalc.tfSplitNum.text length];
-}
-
 - (void)hideKeyboard {
-    [_vCalc.tfBill becomeFirstResponder];
-    [_vCalc.tfBill resignFirstResponder];
+    [_vCalc.ibBill.tfInput resignFirstResponder];
+    [_vCalc.ibPercent.tfInput resignFirstResponder];
+    [_vCalc.ibSplit.tfInput resignFirstResponder];
 }
 
-- (float)calcTip {
-    int bill = [_vCalc.tfBill.text intValue];
-    float tipPercent = [_vCalc.tfTipPercent.text intValue] / 100.0f;
-    int splitNum = [_vCalc.tfSplitNum.text intValue];
-    
-    
-    NSLog(@"%d, %f, %d", bill, tipPercent, splitNum);
-    return bill * tipPercent / splitNum;
-}
+//- (float)calcTip {
+//    int bill = [_vCalc.tfBill.text intValue];
+//    float tipPercent = [_vCalc.tfTipPercent.text intValue] / 100.0f;
+//    int splitNum = [_vCalc.tfSplitNum.text intValue];
+//    
+//    
+//    NSLog(@"%d, %f, %d", bill, tipPercent, splitNum);
+//    return bill * tipPercent / splitNum;
+//}
 
 @end

@@ -12,39 +12,52 @@
 
 @implementation InputBoard
 
-- (id)init {
-    self = [super init];
-//    if (self)
-//        [self create];
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self)
+        [self create];
     return self;
 }
 
 #pragma mark - 构造及初始化
 
-//- (void)create {
-//    [self createKey];
-//    [self createInput];
-//}
-//
-//- (void)createKey {
-//    frame.size.width = INPUT_LEFT_WIDTH;
-//    _lbKey = [[UILabel alloc] initWithFrame:frame];
-//    [_lbKey setBackgroundColor:KEY_BACK_COLOR];
-//    _lbKey.textAlignment = NSTextAlignmentCenter;
-//    _lbKey.textColor = [UIColor whiteColor];
-//    _lbKey.text = @"Default";
-//    
-//    [self addSubview:_lbKey];
-//}
-//
-//- (void)createInput {
-//    frame.origin.x = frame.size.width - INPUT_LEFT_WIDTH;
-//    frame.size.width = frame.size.width - INPUT_LEFT_WIDTH;
-//    _tfInput = [[UITextField alloc] initWithFrame:frame];
-//    _tfInput.keyboardType = UIKeyboardTypeDecimalPad;
-//    _tfInput.placeholder = @"0";
-//    
-//    [self addSubview:_tfInput];
-//}
+- (void)create {
+    [self createKey];
+    [self createInput];
+    [self createSep];
+}
+
+- (void)createKey {
+    _lbKey = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, INPUT_LEFT_WIDTH, self.frame.size.height)];
+    [_lbKey setBackgroundColor:KEY_BACK_COLOR];
+    _lbKey.textAlignment = NSTextAlignmentCenter;
+    _lbKey.textColor = [UIColor whiteColor];
+    _lbKey.text = @"Default";
+    
+    [self addSubview:_lbKey];
+}
+
+- (void)createInput {
+    _tfInput = [[UITextField alloc] initWithFrame:CGRectMake(INPUT_LEFT_WIDTH, 0, self.frame.size.width - INPUT_LEFT_WIDTH, self.frame.size.height)];
+    _tfInput.keyboardType = UIKeyboardTypeDecimalPad;
+    [_tfInput setBackgroundColor:[UIColor whiteColor]];
+    _tfInput.textAlignment = NSTextAlignmentRight;
+    _tfInput.placeholder = @"0";
+    
+    [self addSubview:_tfInput];
+}
+
+- (void)createSep {
+    _vSep = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - SEP_HEIGHT, self.frame.size.width, SEP_HEIGHT)];
+    [_vSep setBackgroundColor:TOP_BAR_BACK_COLOR];
+    
+    [self addSubview:_vSep];
+}
+
+#pragma mark - 设置函数
+
+- (void)setKey:(NSString *)key {
+    _lbKey.text = key;
+}
 
 @end

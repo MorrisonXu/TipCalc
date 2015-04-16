@@ -28,7 +28,9 @@
 }
 
 - (void)createTitle {
-    _lbTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, STATUS_BAR_HEIGHT, self.frame.size.width, self.frame.size.height)];
+    CGRect frameTitle = self.frame;
+    frameTitle.origin.y = 0;
+    _lbTitle = [[UILabel alloc] initWithFrame:frameTitle];
     _lbTitle.textColor = [UIColor whiteColor];
     _lbTitle.textAlignment = NSTextAlignmentCenter;
     

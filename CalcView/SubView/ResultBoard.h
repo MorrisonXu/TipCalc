@@ -10,6 +10,9 @@
 
 @interface ResultBoard : UIView
 
-@property (nonatomic, strong)UILabel *lb;
+@property (nonatomic, strong)UILabel *lbKey;
+@property (nonatomic, strong)UILabel *lbReslt;
+
+- (void)setKey:(NSString *)key;
 
 @end

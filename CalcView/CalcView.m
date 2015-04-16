@@ -20,31 +20,44 @@
 }
 
 - (void)create {
-    [self setBackgroundColor:[UIColor blueColor]];
+    [self setBackgroundColor:MAIN_COLOR];
     
-    CGRect frameBill = CGRectMake(0, 100, self.frame.size.width, 80);
-    CGRect frameTipPercent = CGRectMake(0, 200, self.frame.size.width, 80);
-    CGRect frameSplitNum = CGRectMake(0, 300, self.frame.size.width, 80);
-    CGRect frameTip = CGRectMake(0, 400, self.frame.size.width, 80);
+    [self createTopBar];
     
-    self.tfBill = [self createTf:self.tfBill withFrame:frameBill];
-    self.tfTipPercent = [self createTf:self.tfTipPercent withFrame:frameTipPercent];
-    self.tfSplitNum = [self createTf:self.tfSplitNum withFrame:frameSplitNum];
+    _ibBill = [self createIb:_ibBill withFrame:CGRectMake(0, BILL_Y, self.frame.size.width, BILL_HEIGHT)];
+    _ibPercent = [self createIb:_ibPercent withFrame:CGRectMake(0, PERCENT_Y, self.frame.size.width, PERCENT_HEIGHT)];
+    _ibSplit = [self createIb:_ibSplit withFrame:CGRectMake(0, SPLIT_Y, self.frame.size.width, SPLIT_HEIGHT)];
     
-    self.lbTip = [[UILabel alloc] initWithFrame:frameTip];
-    self.lbTip.text = @"xxx";
-    [self.lbTip setBackgroundColor:[UIColor yellowColor]];
-    [self addSubview:self.lbTip];
+    [self createOK];
     
+    _rbTotal = [self createRb:_rbTotal withFrame:CGRectMake(0, TOTAL_Y, self.frame.size.width, TOTAL_HEIGHT)];
+    _rbTip = [self createRb:_rbTip withFrame:CGRectMake(0, TIP_Y, self.frame.size.width, TIP_HEIGHT)];
 }
 
-- (UITextField *)createTf:(UITextField *)tf withFrame:(CGRect)frame {
-    tf = [[UITextField alloc] initWithFrame:frame];
-    [tf setBackgroundColor:[UIColor redColor]];
-    tf.keyboardType = UIKeyboardTypeDecimalPad;
+- (void)createTopBar {
+    _topBar = [[TopBar alloc] initWithFrame:CGRectMake(0, STATUS_BAR_HEIGHT, self.frame.size.width, TOP_BAR_HEIGHT)];
+    [self addSubview:_topBar];
+}
+
+- (InputBoard *)createIb:(InputBoard *)ib withFrame:(CGRect)frame {
+    ib = [[InputBoard alloc] initWithFrame:frame];
+    [self addSubview:ib];
+    return ib;
+}
+
+- (void)createOK {
+    _btOK = [[UIButton alloc] initWithFrame:CGRectMake(0, OK_Y, self.frame.size.width, OK_HEIGHT - 1)]; // -1为了看起来有一条分割线
+    [_btOK setBackgroundColor:OK_BACK_COLOR];
+    [_btOK setTintColor:[UIColor whiteColor]];
+    [_btOK setTitle:@"OK" forState:UIControlStateNormal];
     
-    [self addSubview:tf];
-    return tf;
+    [self addSubview:_btOK];
+}
+
+- (ResultBoard *)createRb:(ResultBoard *)rb withFrame:(CGRect)frame {
+    rb = [[ResultBoard alloc] initWithFrame:frame];
+    [self addSubview:rb];
+    return rb;
 }
 
 @end

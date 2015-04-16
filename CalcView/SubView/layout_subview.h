@@ -12,16 +12,15 @@
 #import "layout_calc.h"
 
 // Top Bar
-#define TOP_BAR_HEIGHT          44
-#define TOP_BAR_BACK_COLOR      RGBCOLOR(59, 59, 59)
+#define TOP_BAR_BACK_COLOR      MAIN_COLOR
 
 // Input Board
-#define SEP_HEIGHT              1
 #define INPUT_LEFT_WIDTH        130
 #define KEY_BACK_COLOR          RGBCOLOR(0, 188, 212)
+#define SEP_HEIGHT              1
 
 // Result Board
-#define RESULT_BACK_COLOR       RGBCOLOR(59, 59, 59)
+#define RESULT_BACK_COLOR       MAIN_COLOR
 #define RESULT_HEIGHT           216
 
 #define RESULT_HEIGHT           216
