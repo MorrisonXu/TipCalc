@@ -18,10 +18,12 @@
 
 // Input Board
 #define INPUT_LEFT_WIDTH        130
-#define KEY_BACK_COLOR          RGBCOLOR(0, 188, 212)
+//#define KEY_BACK_COLOR          RGBCOLOR(0, 188, 212)
+#define KEY_BACK_COLOR          RGBCOLOR(198, 198, 198)
 #define SEP_HEIGHT              1
 #define MARGIN_RIGHT            20
-#define KEY_FONT(fontSize)      [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:fontSize]
+//#define KEY_FONT(fontSize)      [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:fontSize]
+#define KEY_FONT(fontSize)      [UIFont fontWithName:@"ChalkboardSE-Bold" size:fontSize]
 #define KEY_FONT_SIZE           50
 
 // Result Board

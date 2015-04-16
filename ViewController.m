@@ -90,7 +90,7 @@
 - (BOOL)checkInput {
     NSString *alertMsg = @"";
     if (![self isPureFloat:_vCalc.ibBill.tfInput.text]) {
-        alertMsg = @"<BILL ￥> should be pure float!";
+        alertMsg = @"<BILL $> should be pure float!";
         [_vCalc.ibBill.tfInput becomeFirstResponder];
     } else if (![self isPureInt:_vCalc.ibPercent.tfInput.text] || ![self isPercent:_vCalc.ibPercent.tfInput.text]) {
         alertMsg = @"<TIP %> should be pure int and between 0 and 100!";

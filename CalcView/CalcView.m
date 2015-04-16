@@ -29,7 +29,7 @@
     _ibPercent.tfInput.keyboardType = UIKeyboardTypeNumberPad;
     _ibSplit = [self createIb:_ibSplit withFrame:CGRectMake(0, SPLIT_Y, self.frame.size.width, SPLIT_HEIGHT)];
     _ibSplit.tfInput.keyboardType = UIKeyboardTypeNumberPad;
-    [_ibBill setKey:@"BILL ￥"];
+    [_ibBill setKey:@"BILL $"];
     [_ibPercent setKey:@"TIP %"];
     [_ibSplit setKey:@"SPLIT"];
     

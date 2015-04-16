@@ -32,7 +32,8 @@
 #define OK_Y                        (SPLIT_Y + SPLIT_HEIGHT)
 #define OK_HEIGHT                   44
 #define OK_BACK_COLOR               RGBCOLOR(0, 188, 212)
-#define OK_FONT(fontSize)           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:fontSize]
+//#define OK_FONT(fontSize)           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:fontSize]
+#define OK_FONT(fontSize)           [UIFont fontWithName:@"ChalkboardSE-Bold" size:fontSize]
 #define OK_FONT_SIZE                40
 
 // Result Board
