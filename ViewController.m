@@ -76,7 +76,7 @@
     float bill = [_vCalc.ibBill.tfInput.text floatValue];
     int split = [_vCalc.ibSplit.tfInput.text intValue];
     
-    return bill / split;
+    return bill / split + [self calcTip];
 }
 
 - (float)calcTip {
